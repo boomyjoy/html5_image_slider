@@ -7,12 +7,23 @@ $(document).ready(function() {
     // $("#slider ul li:nth-child(3)").hide();
 
 setInterval(function() {
-  //첫번째 사진 사라짐  :가상선택자
-    $("#slider ul li:first-of-type").fadeOut();
-    //두번째 사진 나타남
-    $("#slider ul li:nth-child(2)").fadeIn();
-        //li 순서를 자동 변경해주면, 자동으로 위 두 페이드 기능이 .. 
+    $('#slider ul li:first-of-type')
+    .fadeOut(2000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo($("#slider ul"));
 
-    $("#slider ul").append ($("#slider ul li:first-of-type"));
-},1000);
+
+
+   
+//     $("#slider ul li:first-of-type").fadeOut();
+//     $("#slider ul li:nth-child(2)").fadeIn();
+//     $("#slider ul").append ($("#slider ul li:first-of-type"));
+
+
+
+
+
+},3000);
 });
